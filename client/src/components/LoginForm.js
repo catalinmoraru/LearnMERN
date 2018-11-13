@@ -44,7 +44,7 @@ class LoginForm extends Component {
 
 	submitForm(e) {
 		e.preventDefault();
-		alert(`Email: ${ this.state.email }`);
+		// alert(`Email: ${ this.state.email }`);
 		this.props.loginSucessful();
 		// loginSucessful();
 

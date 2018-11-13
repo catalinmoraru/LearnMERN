@@ -3,6 +3,7 @@ import AppNavbar from './components/AppNavbar';
 import LoginForm from './components/LoginForm';
 import ShoppingList from './components/ShoppingList';
 import ItemModal from './components/ItemModal';
+import Gold from './components/Gold';
 import { Container } from 'reactstrap';
 
 import { Provider } from 'react-redux';
@@ -21,6 +22,7 @@ class App extends Component {
 					<LoginForm/>
 					<AppNavbar />
 					<Container>
+						<Gold/>
 						<ItemModal name = { 'Add TO DO' }/>
 						<ItemModal name = { 'Add Reward ' }/>
 						<ShoppingList />
