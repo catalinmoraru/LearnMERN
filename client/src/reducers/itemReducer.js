@@ -2,7 +2,8 @@ import {
   GET_ITEMS,
   ADD_ITEM,
   DELETE_ITEM,
-  ITEMS_LOADING
+  ITEMS_LOADING,
+    LOGIN_SUCCESSFUL
 } from '../actions/types';
 
 const initialState = {
