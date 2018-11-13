@@ -53,58 +53,68 @@ class LoginForm extends Component {
 	render() {
 		const { email, password } = this.state;
 		// const { email, password } = this.state;
-		return (
-			<Container className="App">
-				<h2>Sign In</h2>
-				<Form className="form" onSubmit={ (e) => this.submitForm(e) }>
-					<Col>
-						<FormGroup>
-							<Label>Username</Label>
-							<Input
-								type="email"
-								name="email"
-								id="exampleEmail"
-								placeholder="myemail@email.com"
-								value={ email }
-								valid={ this.state.validate.emailState === 'has-success' }
-								invalid={ this.state.validate.emailState === 'has-danger' }
-								onChange={ (e) => {
-									this.validateEmail(e)
-									this.handleChange(e)
-								} }
-							/>
-							<FormFeedback valid>
-								That's a tasty looking email you've got there.
-							</FormFeedback>
-							<FormFeedback>
-								Uh oh! Looks like there is an issue with your email. Please input a correct email.
-							</FormFeedback>
-							<FormText>Your username is most likely your email.</FormText>
-						</FormGroup>
-					</Col>
-					<Col>
-						<FormGroup>
-							<Label for="examplePassword">Password</Label>
-							<Input
-								type="password"
-								name="password"
-								id="examplePassword"
-								placeholder="********"
-								value={ password }
-								onChange={ (e) => this.handleChange(e) }
-							/>
-						</FormGroup>
-					</Col>
-					<Button>Submit</Button>
-				</Form>
-			</Container>
-		);
+
+		const loginSuccessful = this.props.loginSuccessful;
+		// alert(loginSuccessful);
+
+		if (!loginSuccessful) {
+
+			return (
+				<Container className="App">
+					<h2>Sign In</h2>
+					<Form className="form" onSubmit={(e) => this.submitForm(e)}>
+						<Col>
+							<FormGroup>
+								<Label>Username</Label>
+								<Input
+									type="email"
+									name="email"
+									id="exampleEmail"
+									placeholder="myemail@email.com"
+									value={email}
+									valid={this.state.validate.emailState === 'has-success'}
+									invalid={this.state.validate.emailState === 'has-danger'}
+									onChange={(e) => {
+										this.validateEmail(e)
+										this.handleChange(e)
+									}}
+								/>
+								<FormFeedback valid>
+									That's a tasty looking email you've got there.
+								</FormFeedback>
+								<FormFeedback>
+									Uh oh! Looks like there is an issue with your email. Please input a correct email.
+								</FormFeedback>
+								<FormText>Your username is most likely your email.</FormText>
+							</FormGroup>
+						</Col>
+						<Col>
+							<FormGroup>
+								<Label for="examplePassword">Password</Label>
+								<Input
+									type="password"
+									name="password"
+									id="examplePassword"
+									placeholder="********"
+									value={password}
+									onChange={(e) => this.handleChange(e)}
+								/>
+							</FormGroup>
+						</Col>
+						<Button>Submit</Button>
+					</Form>
+				</Container>
+			);
+		} else {
+			return ( <div></div>);
+		}
 	}
 }
 
 // export default LoginForm;
 
 const mapStateToProps = state => ({
+	loginSuccessful: state.item.loginSuccessful
 });
 
 export const loginSucessful = () => dispatch => {
