@@ -15,12 +15,14 @@ class Gold extends Component {
 
 		if (loginSuccessful) {
 			return (
-				<div>
+				<div >
+					<span className="col-md-4">
 					<Alert color="warning">
 						You have : {this.props.gold} gold
+						<img  src="https://i.imgur.com/ux6Apdn.png"></img>
 					</Alert>
 
-					<img  src="https://static.businessinsider.com/image/b87a6c794f71da49312c8c00/image.jpg"></img>
+					</span>
 				</div>
 			);
 		}
