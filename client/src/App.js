@@ -3,9 +3,9 @@ import AppNavbar from './components/AppNavbar';
 import LoginForm from './components/LoginForm';
 
 import ShoppingItemList from './components/ShoppingItemList';
-// import ShoppingRewardList from './components/ShoppingRewardList';
+import ShoppingRewardList from './components/ShoppingRewardList';
 
-// import ShoppingList from './components/ShoppingItemList';
+import ShoppingList from './components/ShoppingItemList';
 import Dailies from './components/Dailies';
 
 import ItemModal from './components/ItemModal';
@@ -17,7 +17,7 @@ import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-// import RewardModal from "./components/RewardModal";
+import RewardModal from "./components/RewardModal";
 
 
 /// test
@@ -33,11 +33,10 @@ class App extends Component {
 						<Gold/>
 						<ItemModal name = { 'Add TO DO' }/>
 						<ShoppingItemList />
-						{/*<RewardModal name = { 'Add Reward ' }/>*/}
-						{/*<ShoppingRewardList />*/}
 						<ItemModal />
-						{/*<ShoppingItemList />*/}
 						<Dailies />
+        				<RewardModal name = { 'Add Reward ' }/>
+        				<ShoppingRewardList />
 					</Container>
 					</div>
 
