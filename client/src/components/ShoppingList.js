@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
-import {loginSucessful} from "./Login";
+import {loginSucessful} from "./LoginForm";
 
 class ShoppingList extends Component {
 	componentDidMount() {
@@ -21,11 +21,7 @@ class ShoppingList extends Component {
 		// alert(loginSuccessful);
 
 		if (loginSuccessful) {
-
-
 			return (
-
-
 				<Container>
 					<ListGroup>
 						<TransitionGroup className="shopping-list">
@@ -49,11 +45,10 @@ class ShoppingList extends Component {
 				</Container>
 
 			);
-
 	} else {
 		return(
-			<div>Please login</div>
-		)
+			<div></div>
+		);
 	}
   }
 }

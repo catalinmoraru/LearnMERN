@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
+import LoginForm from './components/LoginForm';
 import ShoppingList from './components/ShoppingList';
 import ItemModal from './components/ItemModal';
 import { Container } from 'reactstrap';
@@ -15,6 +16,7 @@ class App extends Component {
 		return (
 			<Provider store={store}>
 				<div className="App">
+					<LoginForm/>
 					<AppNavbar />
 					<Container>
 						<ItemModal />

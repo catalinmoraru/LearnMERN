@@ -10,7 +10,7 @@ import {
   Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/itemActions';
+import {addItem, deleteItem, getItems} from '../actions/itemActions';
 
 class ItemModal extends Component {
   state = {
@@ -43,6 +43,9 @@ class ItemModal extends Component {
   };
 
   render() {
+	  const loginSuccessful = this.props.loginSuccessful;
+
+	if (loginSuccessful) {
     return (
       <div>
         <Button
@@ -75,11 +78,16 @@ class ItemModal extends Component {
         </Modal>
       </div>
     );
+  } else {
+        return ( <div></div>);
+    }
   }
 }
 
+
 const mapStateToProps = state => ({
-  item: state.item
+  item: state.item,
+	loginSuccessful: state.item.loginSuccessful
 });
 
 export default connect(

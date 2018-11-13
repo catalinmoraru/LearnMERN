@@ -9,7 +9,9 @@ import {
   NavLink,
   Container,
 } from 'reactstrap';
-import LoginForm from "./Login";
+import LoginForm from "./LoginForm";
+import {connect} from "react-redux";
+import {deleteItem, getItems} from "../actions/itemActions";
 
 class AppNavbar extends Component {
 
@@ -26,17 +28,14 @@ class AppNavbar extends Component {
   };
 
   render() {
+	  const loginSuccessful = this.props.loginSuccessful;
+
+	if (loginSuccessful) {
     return (
-      <div>
-		  <Container>
-			  <LoginForm/>
-		  </Container>
+		<div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
-
-
 			<Container>
-
-            <NavbarBrand href="/">ShoppingList</NavbarBrand>
+            <NavbarBrand href="/">TO DO List</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -51,7 +50,24 @@ class AppNavbar extends Component {
         </Navbar>
       </div>
     );
+	}
+	else {
+		return(
+			<div></div>
+		);
+	}
   }
 }
 
-export default AppNavbar;
+const mapStateToProps = state => ({
+	item: state.item,
+	loginSuccessful: state.item.loginSuccessful
+});
+
+export default connect(
+	mapStateToProps,
+	{ getItems, deleteItem }
+)(AppNavbar);
+
+
+// export default AppNavbar;
