@@ -45,11 +45,14 @@ class LoginForm extends Component {
 	submitForm(e) {
 		e.preventDefault();
 		alert(`Email: ${ this.state.email }`);
+		this.props.loginSucessful();
+		// loginSucessful();
 
 	}
 
 	render() {
 		const { email, password } = this.state;
+		// const { email, password } = this.state;
 		return (
 			<Container className="App">
 				<h2>Sign In</h2>
