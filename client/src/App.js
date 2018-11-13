@@ -33,7 +33,6 @@ class App extends Component {
 						<Gold/>
 						<ItemModal name = { 'Add TO DO' }/>
 						<ShoppingItemList />
-						<ItemModal />
 						<Dailies />
         				<RewardModal name = { 'Add Reward ' }/>
         				<ShoppingRewardList />
