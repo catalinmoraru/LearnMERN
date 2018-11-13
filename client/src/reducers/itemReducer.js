@@ -2,16 +2,15 @@ import {
   GET_ITEMS,
   ADD_ITEM,
   DELETE_ITEM,
+  DAILY_TASK_DONE,
   ITEMS_LOADING,
-    LOGIN_SUCCESSFUL,
-    DECREASE_GOAL
+    LOGIN_SUCCESSFUL
 } from '../actions/types';
 
 const initialState = {
   loginSuccessful: false,
   items: [],
-  loading: false,
-  gold: 0
+  loading: false
 };
 
 export default function(state = initialState, action) {
@@ -30,9 +29,7 @@ export default function(state = initialState, action) {
     case ADD_ITEM:
       return {
         ...state,
-        gold : state.gold - 1,
-        items: [action.payload, ...state.items],
-  
+        items: [action.payload, ...state.items]
       };
     case ITEMS_LOADING:
       return {
@@ -44,11 +41,11 @@ export default function(state = initialState, action) {
         ...state,
 		  loginSuccessful: true
       };
-     case DECREASE_GOAL:
+    case DAILY_TASK_DONE:
       return {
         ...state,
-        gold : state.gold - 1,
-      } 
+        gold:state.gold+10
+      };
     default:
       return state;
   }
