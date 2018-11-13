@@ -16,8 +16,13 @@ class ShoppingList extends Component {
 
   render() {
     const { items } = this.props.item;
+    const loginSuccessful  = this.props.loginSuccessful;
+	alert(loginSuccessful);
+
     return (
-      <Container>
+
+
+		<Container>
         <ListGroup>
           <TransitionGroup className="shopping-list">
             {items.map(({ _id, name }) => (
@@ -38,6 +43,7 @@ class ShoppingList extends Component {
           </TransitionGroup>
         </ListGroup>
       </Container>
+
     );
   }
 }
@@ -48,7 +54,8 @@ ShoppingList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  item: state.item
+	item: state.item,
+	loginSuccessful: state.item.loginSuccessful
 });
 
 export default connect(

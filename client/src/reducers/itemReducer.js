@@ -7,7 +7,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  loggingSuccessful: false,
+  loginSuccessful: false,
   items: [],
   loading: false
 };
@@ -38,7 +38,7 @@ export default function(state = initialState, action) {
     case LOGIN_SUCCESSFUL:
       return {
         ...state,
-        loggingSuccessful: true
+		  loginSuccessful: true
       };
     default:
       return state;
