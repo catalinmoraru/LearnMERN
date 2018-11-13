@@ -35,7 +35,7 @@ class ItemModal extends Component {
       name: this.state.name
     };
 
-    // Add item via addItem action
+    // Add TO DO item via addItem action
     this.props.addItem(newItem);
 
     // Close modal
@@ -46,11 +46,11 @@ class ItemModal extends Component {
     return (
       <div>
         <Button
-          color="dark"
+          color="primary"
           style={{ marginBottom: '2rem' }}
           onClick={this.toggle}
         >
-          Add Item
+          Add TO DO
         </Button>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>

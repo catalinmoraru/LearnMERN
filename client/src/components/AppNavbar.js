@@ -7,8 +7,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
 } from 'reactstrap';
+import LoginForm from "./Login";
 
 class AppNavbar extends Component {
 
@@ -27,8 +28,14 @@ class AppNavbar extends Component {
   render() {
     return (
       <div>
+		  <Container>
+			  <LoginForm/>
+		  </Container>
         <Navbar color="dark" dark expand="sm" className="mb-5">
-          <Container>
+
+
+			<Container>
+
             <NavbarBrand href="/">ShoppingList</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
