@@ -24,11 +24,24 @@ class Dailies extends Component {
 		this.props.deleteItem(id);
 	};
 
+
+	checkAddress = (event) =>
+	{
+		if (event.target.checked)
+		{
+			this.props.dailyTaskDone();
+			
+		}
+	}
 	render() {
 		const loginSuccessful = this.props.loginSuccessful;
 		 const {items} = this.state;
-		
-		
+
+
+
+
+
+
 		if (loginSuccessful) {
 			return(
                 <Container> 
@@ -50,7 +63,8 @@ class Dailies extends Component {
                              <CSSTransition key={id} timeout={500} classNames="fade">
                              <ListGroupItem>
 								 <Label check>
-								  <Input type="checkbox" onClick={this.props.dailyTaskDone} />{' '}
+									 {/*this.onDeleteClick.bind(this, _id)*/}
+								  <Input type="checkbox" onClick={this.checkAddress.bind(this)}  />{' '}
                                {/* <Button className="remove-btn" color="danger" size="small"
                                onClick={this.onDeleteClick.bind(this, id)}
                                >
