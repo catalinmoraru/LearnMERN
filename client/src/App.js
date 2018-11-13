@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
 import LoginForm from './components/LoginForm';
-import ShoppingList from './components/ShoppingList';
+import ShoppingItemList from './components/ShoppingItemList';
+import ShoppingRewardList from './components/ShoppingRewardList';
 import ItemModal from './components/ItemModal';
 import Gold from './components/Gold';
 import { Container } from 'reactstrap';
@@ -11,6 +12,7 @@ import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import RewardModal from "./components/RewardModal";
 
 
 /// test
@@ -22,10 +24,10 @@ class App extends Component {
 					<LoginForm/>
 					<AppNavbar />
 					<Container>
-						<Gold/>
 						<ItemModal name = { 'Add TO DO' }/>
-						<ItemModal name = { 'Add Reward ' }/>
-						<ShoppingList />
+						<ShoppingItemList />
+						<RewardModal name = { 'Add Reward ' }/>
+						<ShoppingRewardList />
 					</Container>
 				</div>
 			</Provider>

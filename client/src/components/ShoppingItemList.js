@@ -6,7 +6,7 @@ import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 import {loginSucessful} from "./LoginForm";
 
-class ShoppingList extends Component {
+class ShoppingItemList extends Component {
 	componentDidMount() {
 		this.props.getItems();
 	}
@@ -53,7 +53,7 @@ class ShoppingList extends Component {
   }
 }
 
-ShoppingList.propTypes = {
+ShoppingItemList.propTypes = {
   getItems: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired
 };
@@ -66,4 +66,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getItems, deleteItem }
-)(ShoppingList);
+)(ShoppingItemList);
