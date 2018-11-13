@@ -19,7 +19,8 @@ class App extends Component {
 					<LoginForm/>
 					<AppNavbar />
 					<Container>
-						<ItemModal />
+						<ItemModal name = { 'Add TO DO' }/>
+						<ItemModal name = { 'Add Reward ' }/>
 						<ShoppingList />
 					</Container>
 				</div>
