@@ -4,6 +4,9 @@ import {
 	FormGroup, Label, Input,
 	Button, FormText, FormFeedback,
 } from 'reactstrap';
+import {connect} from "react-redux";
+import { setLoginSuccessful } from "../actions/itemActions";
+
 
 
 class LoginForm extends Component {
@@ -96,4 +99,17 @@ class LoginForm extends Component {
 	}
 }
 
-export default LoginForm;
+// export default LoginForm;
+
+const mapStateToProps = state => ({
+});
+
+export const loginSucessful = () => dispatch => {
+	dispatch(setLoginSuccessful());
+};
+
+
+export default connect(
+	mapStateToProps,
+	{ loginSucessful }
+)(LoginForm);

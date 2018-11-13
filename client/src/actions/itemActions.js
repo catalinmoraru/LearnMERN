@@ -34,3 +34,9 @@ export const setItemsLoading = () => {
     type: ITEMS_LOADING
   };
 };
+
+export const setLoginSuccesful = () => {
+	return {
+		type: LOGIN_SUCCESSFUL
+	};
+};
