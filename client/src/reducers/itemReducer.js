@@ -2,15 +2,18 @@ import {
   GET_ITEMS,
   ADD_ITEM,
   DELETE_ITEM,
-  DAILY_TASK_DONE,
   ITEMS_LOADING,
-    LOGIN_SUCCESSFUL
+    LOGIN_SUCCESSFUL,
+    DECREASE_GOAL,
+	DAILY_TASK_DONE
+
 } from '../actions/types';
 
 const initialState = {
   loginSuccessful: false,
   items: [],
-  loading: false
+  loading: false,
+  gold: 0
 };
 
 export default function(state = initialState, action) {
@@ -24,12 +27,15 @@ export default function(state = initialState, action) {
     case DELETE_ITEM:
       return {
         ...state,
-        items: state.items.filter(item => item._id !== action.payload)
+        items: state.items.filter(item => item._id !== action.payload),
+		  gold: state.gold + 5
       };
     case ADD_ITEM:
       return {
         ...state,
-        items: [action.payload, ...state.items]
+        gold : state.gold,
+        items: [action.payload, ...state.items],
+  
       };
     case ITEMS_LOADING:
       return {
@@ -41,11 +47,19 @@ export default function(state = initialState, action) {
         ...state,
 		  loginSuccessful: true
       };
+
+     case DECREASE_GOAL:
+      return {
+        ...state,
+        gold : state.gold - 1,
+      }
+
     case DAILY_TASK_DONE:
       return {
         ...state,
         gold:state.gold+10
       };
+
     default:
       return state;
   }

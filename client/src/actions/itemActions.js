@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING, LOGIN_SUCCESSFUL,DAILY_TASK_DONE } from './types';
+
+import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING, LOGIN_SUCCESSFUL, DECREASE_GOAL, DAILY_TASK_DONE} from './types';
+
+
 
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
@@ -43,8 +46,16 @@ export const setLoginSuccessful = () => {
 	};
 };
 
+
+export const setDecreaseCounter = () => {
+  return {
+    type : DECREASE_GOAL
+  }
+}
+
 export const dailyTaskDone = () => {
 	return {
 		type: DAILY_TASK_DONE
 	};
 };
+
