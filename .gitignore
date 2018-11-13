@@ -3,6 +3,10 @@
 # Compiled class file
 *.class
 
+
+# dependencies
+/node_modules
+
 # Log file
 *.log
 
