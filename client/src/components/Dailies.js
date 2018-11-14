@@ -45,7 +45,7 @@ class Dailies extends Component {
 		if (loginSuccessful) {
 			return(
                 <Container> 
-                    <Button color="dark"
+                    <Button color="primary"
                     style={{marginBottom: '2rem'}}
                     onClick={() =>{
                         const name =prompt('Enter Item');

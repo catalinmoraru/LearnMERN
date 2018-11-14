@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
     case DELETE_REWARD:
       return {
         ...state,
-        rewards: state.rewards.filter(reward => reward._id !== action.payload)
+        rewards: state.rewards.filter(reward => reward._id !== action.payload),
       };
     case ADD_REWARD:
       return {

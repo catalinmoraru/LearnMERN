@@ -1,11 +1,11 @@
 import {
-  GET_ITEMS,
-  ADD_ITEM,
-  DELETE_ITEM,
-  ITEMS_LOADING,
-    LOGIN_SUCCESSFUL,
-    DECREASE_GOAL,
-	DAILY_TASK_DONE
+	GET_ITEMS,
+	ADD_ITEM,
+	DELETE_ITEM,
+	ITEMS_LOADING,
+	LOGIN_SUCCESSFUL,
+	DECREASE_GOAL,
+	DAILY_TASK_DONE, DELETE_REWARD
 
 } from '../actions/types';
 
@@ -57,7 +57,13 @@ export default function(state = initialState, action) {
     case DAILY_TASK_DONE:
       return {
         ...state,
-        gold:state.gold+10
+        gold:state.gold + 10
+      };
+
+     case DELETE_REWARD:
+      return {
+        ...state,
+        gold:state.gold - 10
       };
 
     default:
